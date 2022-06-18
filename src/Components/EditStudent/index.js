@@ -35,7 +35,7 @@ const EditStudent = ({ students, updateStudent }) => {
 
     updateStudent(data);
     toast.success("Contact updated successfully!!");
-    navigate("/");
+    navigate("/studentsDetails");
   };
 
   return (
@@ -43,7 +43,7 @@ const EditStudent = ({ students, updateStudent }) => {
       <div className="row d-flex flex-column">
         <button
           className="btn btn-dark ml-auto my-5"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/studentsDetails")}
         >
           Go back
         </button>
@@ -89,7 +89,7 @@ const EditStudent = ({ students, updateStudent }) => {
                 <button
                   type="button"
                   className="btn btn-danger"
-                  onClick={() => navigate("/")}
+                  onClick={() => navigate("/studentsDetails")}
                 >
                   cancel
                 </button>
