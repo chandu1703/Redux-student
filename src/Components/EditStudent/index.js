@@ -34,7 +34,7 @@ const EditStudent = ({ students, updateStudent }) => {
     };
 
     updateStudent(data);
-    toast.success("Contact updated successfully!!");
+    toast.success("student updated successfully!!");
     navigate("/studentsDetails");
   };
 

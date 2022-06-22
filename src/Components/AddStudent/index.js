@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 
-const AddPost = ({ students, addStudent }) => {
+const AddStudent = ({ students, addStudent }) => {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [Gender, setGender] = useState("");
@@ -24,13 +24,13 @@ const AddPost = ({ students, addStudent }) => {
     };
 
     addStudent(data);
-    toast.success("Contact added successfully!!");
-    navigate("/");
+    toast.success("Student added successfully!!");
+    navigate("/studentsDetails");
   };
 
   return (
     <div className="container-fluid">
-      <h1 className="text-center text-dark py-3 display-2">Add Post</h1>
+      <h1 className="text-center text-dark py-3 display-2">Add Student</h1>
       <div className="row">
         <div className="col-md-6 p-5 mx-auto shadow">
           <form onSubmit={handleSubmit}>
@@ -39,7 +39,7 @@ const AddPost = ({ students, addStudent }) => {
                 className="form-control"
                 type="text"
                 placeholder="Full name"
-                value={name}
+                value={name} required
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
@@ -48,7 +48,7 @@ const AddPost = ({ students, addStudent }) => {
                 className="form-control"
                 type="number"
                 placeholder="age"
-                value={age}
+                value={age} required
                 onChange={(e) => setAge(e.target.value)}
               />
             </div>
@@ -57,7 +57,7 @@ const AddPost = ({ students, addStudent }) => {
                 className="form-control"
                 type="text"
                 placeholder="Gender"
-                value={Gender}
+                value={Gender} required
                 onChange={(e) => setGender(e.target.value)}
               />
             </div>
@@ -66,7 +66,7 @@ const AddPost = ({ students, addStudent }) => {
                 className="form-control"
                 type="number"
                 placeholder="class"
-                value={classNum}
+                value={classNum} required
                 onChange={(e) => setClassNum(e.target.value)}
               />
             </div>
@@ -74,7 +74,7 @@ const AddPost = ({ students, addStudent }) => {
               <input
                 className="btn btn-block btn-dark"
                 type="submit"
-                value="Add Student"
+                value="Add Student" required
               />
             </div>
           </form>
@@ -93,4 +93,4 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddPost);
+export default connect(mapStateToProps, mapDispatchToProps)(AddStudent);
