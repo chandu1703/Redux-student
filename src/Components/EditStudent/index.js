@@ -62,7 +62,7 @@ const EditStudent = ({ students, updateStudent }) => {
                 <input
                   className="form-control"
                   value={age}
-                  placeholder={"age"}
+                  placeholder={"Age"}
                   onChange={(e) => setAge(e.target.value)}
                 />
               </div>
